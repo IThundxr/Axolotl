@@ -1,0 +1,23 @@
+services:
+  postgres:
+    image: postgres:latest
+    restart: no
+    user: 1000:1000
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./postgres:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+
+  redis:
+    image: redis:latest
+    restart: no
+    command: redis-server --appendonly yes --loglevel warning
+    user: 1000:1000
+    ports:
+      - "6379:6379"
+    volumes:
+      - ./redis:/data

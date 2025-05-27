@@ -1,0 +1,32 @@
+[package]
+name = "axolotl"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+anyhow = "1.0.94"
+async-trait = "0.1.86"
+axum = "0.8.1"
+axum-login = "0.17.0"
+#axum-macros = "0.4.2"
+base64 = "0.22.1"
+deadpool = "0.12.1"
+diesel = { version = "2.2.7", features = ["postgres", "uuid"] }
+diesel-async = { version = "0.5.0", features = ["postgres", "deadpool"] }
+diesel_async_migrations = "0.15.0"
+dotenvy = "0.15.7"
+futures-util = "0.3.31"
+password-auth = "1.0.0"
+serde = { version = "1.0.216", features = ["derive"] }
+serde_json = "1.0.133"
+thiserror = "2.0.12"
+time = "0.3.41"
+tokio = { version = "1.42.0", features = ["full"] }
+tokio-util = { version = "0.7.15", features = ["io"] }
+tower = "0.5.2"
+tower-http = { version = "0.6.2", features = ["trace", "fs"] }
+tower-sessions = { version = "0.14.0", default-features = false, features = ["signed", "default"] }
+tower-sessions-redis-store = "0.16.0"
+tracing = "0.1.41"
+tracing-subscriber = { version = "0.3.19", features = ["env-filter"] }
+uuid = { version = "1.17.0", features = ["serde"] }
